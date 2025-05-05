@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             Label label1;
             listBox1 = new ListBox();
             panel1 = new Panel();
@@ -48,8 +47,9 @@
             label2 = new Label();
             tbDesc = new TextBox();
             tbTitle = new TextBox();
-            label1 = new Label();        
+            label1 = new Label();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -69,11 +69,13 @@
             listBox1.Font = new Font("Microsoft JhengHei UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 26;
+            listBox1.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
             listBox1.Location = new Point(10, 10);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(224, 369);
+            listBox1.Size = new Size(224, 509);
             listBox1.TabIndex = 0;
             listBox1.ValueMember = "Description";
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // panel1
             // 
@@ -97,7 +99,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(234, 10);
             panel1.Name = "panel1";
-            panel1.Size = new Size(724, 369);
+            panel1.Size = new Size(921, 509);
             panel1.TabIndex = 1;
             // 
             // btnCancel
@@ -148,9 +150,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.check_list;
-            pictureBox1.Location = new Point(530, 47);
+            pictureBox1.Location = new Point(555, 47);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(175, 180);
+            pictureBox1.Size = new Size(304, 289);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 14;
             pictureBox1.TabStop = false;
@@ -262,7 +264,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(968, 389);
+            ClientSize = new Size(1165, 529);
             Controls.Add(panel1);
             Controls.Add(listBox1);
             FormBorderStyle = FormBorderStyle.Fixed3D;
@@ -270,8 +272,10 @@
             Padding = new Padding(10);
             StartPosition = FormStartPosition.CenterScreen;
             Text = "TODO List 管理系統, Author: JamesChen";
+            Load += Form1_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
