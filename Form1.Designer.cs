@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             Label label1;
+            btnModify = new Button();
             listBox1 = new ListBox();
             panel1 = new Panel();
             btnCancel = new Button();
@@ -38,7 +39,6 @@
             pictureBox1 = new PictureBox();
             dtPickerDue = new DateTimePicker();
             btnDelete = new Button();
-            btnModify = new Button();
             btnAdd = new Button();
             label5 = new Label();
             tbCreatedDate = new TextBox();
@@ -61,6 +61,17 @@
             label1.Size = new Size(56, 28);
             label1.TabIndex = 0;
             label1.Text = "標題";
+            // 
+            // btnModify
+            // 
+            btnModify.Enabled = false;
+            btnModify.Font = new Font("Microsoft JhengHei UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            btnModify.Location = new Point(152, 291);
+            btnModify.Name = "btnModify";
+            btnModify.Size = new Size(120, 45);
+            btnModify.TabIndex = 11;
+            btnModify.Text = "Modify";
+            btnModify.UseVisualStyleBackColor = true;
             // 
             // listBox1
             // 
@@ -104,6 +115,7 @@
             // 
             // btnCancel
             // 
+            btnCancel.Enabled = false;
             btnCancel.Font = new Font("Microsoft JhengHei UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             btnCancel.Location = new Point(390, 291);
             btnCancel.Name = "btnCancel";
@@ -111,6 +123,7 @@
             btnCancel.TabIndex = 19;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // rbStatus2
             // 
@@ -167,6 +180,7 @@
             // 
             // btnDelete
             // 
+            btnDelete.Enabled = false;
             btnDelete.Font = new Font("Microsoft JhengHei UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             btnDelete.Location = new Point(278, 291);
             btnDelete.Name = "btnDelete";
@@ -174,16 +188,6 @@
             btnDelete.TabIndex = 12;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnModify
-            // 
-            btnModify.Font = new Font("Microsoft JhengHei UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            btnModify.Location = new Point(152, 291);
-            btnModify.Name = "btnModify";
-            btnModify.Size = new Size(120, 45);
-            btnModify.TabIndex = 11;
-            btnModify.Text = "Modify";
-            btnModify.UseVisualStyleBackColor = true;
             // 
             // btnAdd
             // 
@@ -194,6 +198,7 @@
             btnAdd.TabIndex = 10;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // label5
             // 
@@ -272,6 +277,7 @@
             Padding = new Padding(10);
             StartPosition = FormStartPosition.CenterScreen;
             Text = "TODO List 管理系統, Author: JamesChen";
+            FormClosed += Form1_FormClosed;
             Load += Form1_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
